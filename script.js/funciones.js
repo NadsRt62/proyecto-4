@@ -1,4 +1,4 @@
-// CLASE PARA EL ROLLO AUDITADO
+// CLASE ROLLO AUDITADO
 class RolloAuditado {
     constructor(idRollo, mtsTotales, mtsDefecto) {
         this.idRollo = idRollo;
@@ -22,7 +22,7 @@ function cargarRollos() {
     mostrarRollos();
 }
 
-// FUNCION PARA AGREGAR NUEVAS AUDITORIAS
+// FUNCION AGREGAR NUEVAS AUDITORIAS
 btnAuditar.addEventListener("click", agregarRollo);
 
 function agregarRollo() {
@@ -35,7 +35,7 @@ function agregarRollo() {
         return alert("Escribe todos los datos primero");
     }
 
-    //VALIDA LOS METROS CON DEFECTOS
+    //VALIDAR LOS METROS CON DEFECTOS
     if (mtsDefecto > mtsTotales) {
         return alert("Los metros con defecto no pueden ser mayores a los metros totales"); //[cite: 1]
     }
@@ -53,7 +53,7 @@ function agregarRollo() {
     mtsDefectoInput.value = "";
 }
 
-// FUNCION PARA MOSTRAR LOS DATOS EN EL DOM
+// FUNCION MOSTRAR LOS DATOS EN EL DOM
 function mostrarRollos() {
     const rollos = obtenerRollos();
     tabla.innerHTML = "";
@@ -72,7 +72,7 @@ function mostrarRollos() {
     });
 }
 
-// FUNCION PARA OBTENER LOS DATOS DE LOCALSTORAGE
+// FUNCION OBTENER LOS DATOS DE LOCALSTORAGE
 function obtenerRollos() {
     return JSON.parse(localStorage.getItem("rollos")) || []; 
 }
